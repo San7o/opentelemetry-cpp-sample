@@ -1,8 +1,8 @@
 opentelemetry-cpp-sample
 ========================
 
-Sample C++ application with OpenTelemetry instrumentation to create
-and emit telemetry data.
+Sample C++ application with OpenTelemetry instrumentation to emit
+telemetry data.
 
 Author:  Giovanni Santini
 Mail:    giovanni.santini@proton.me
