@@ -14,12 +14,13 @@ Usage
 
 Build and run the application:
 
-    cmake -Bbuild && cmake --build build -j$(nproc) --target=opentelemetry-sample
+    cmake -Bbuild
+    cmake --build build -j$(nproc) --target=opentelemetry-sample
     ./build/opentelemetry-sample
 
-The application will listen on 8080 for HTTP GET requests. It provides
-a /rolldice api that will return a random number and generate an
-opentelemetry event, for example:
+The application will listen on 8080 for HTTP GET requests. It
+registers a /rolldice route that will return a random number and
+generate an opentelemetry trace, for example:
 
 {
   name          : RollDiceServer
