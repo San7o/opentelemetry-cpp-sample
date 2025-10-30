@@ -1,0 +1,57 @@
+opentelemetry-cpp-sample
+========================
+
+Sample C++ application with OpenTelemetry instrumentation to create
+and emit telemetry data.
+
+Author:  Giovanni Santini
+Mail:    giovanni.santini@proton.me
+License: MIT
+
+
+Usage
+-----
+
+Build and run the application:
+
+    cmake -Bbuild && cmake --build build -j$(nproc) --target=opentelemetry-sample
+    ./build/opentelemetry-sample
+
+The application will listen on 8080 for HTTP GET requests. It provides
+a /rolldice api that will return a random number and generate an
+opentelemetry event, for example:
+
+{
+  name          : RollDiceServer
+  trace_id      : 69d9ea15f23ef6d565f2306cc368a330
+  span_id       : 922fb3348352e8e7
+  tracestate    : 
+  parent_span_id: 0000000000000000
+  start         : 1761841788256089093
+  duration      : 7015
+  description   : 
+  span kind     : Internal
+  status        : Unset
+  attributes    : 
+        random-number: 6
+  events        : 
+  links         : 
+  resources     : 
+        service.name: unknown_service
+        telemetry.sdk.version: 1.24.0-dev
+        telemetry.sdk.name: opentelemetry
+        telemetry.sdk.language: cpp
+  instr-lib     : rolldice-tracer
+}
+
+Opentelemetry
+-------------
+
+OpenTelemetry is an open-source observability framework that helps
+collect traces, metrics, and logs from applications. It provides a
+standard way to instrument code and export telemetry data to backends
+like Prometheus, Jaeger, or Zipkin.
+
+Official website:
+
+    https://opentelemetry.io/
